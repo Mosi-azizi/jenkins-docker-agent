@@ -14,21 +14,21 @@ pipeline {
         stage('Clean') {
             steps {
                 dir("${env.WORKSPACE}/"){
-                    sh 'sudo mvn clean'
+                    sh 'mvn clean'
                 }
             }
         }
         stage('Test') {
             steps {
                 dir("${env.WORKSPACE}/"){
-                    sh 'sudo mvn test'
+                    sh 'mvn test'
                 }
             }
         }
         stage('Package') {
             steps {
                 dir("${env.WORKSPACE}/"){
-                    sh 'sudo mvn package -DskipTests'
+                    sh 'mvn package -DskipTests'
                 }
             }
         }
